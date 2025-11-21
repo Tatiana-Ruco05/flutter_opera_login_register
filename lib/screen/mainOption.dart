@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'add.dart';
+import 'division.dart';
+import 'calculadora.dart';
+import 'register.dart';
 
 class MainOption extends StatefulWidget {
   const MainOption({super.key});
@@ -14,7 +17,7 @@ class _MainOptionState extends State<MainOption> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Operaciones Aritmeticas, Login y Registro',
-        style: TextStyle(color: Colors.white)),
+            style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.orange[400],
         foregroundColor: Colors.white,
       ),
@@ -23,6 +26,8 @@ class _MainOptionState extends State<MainOption> {
           SizedBox(height: 16),
           Image.network("https://picsum.photos/330/200"),
           SizedBox(height: 16),
+          
+          // Suma
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
@@ -31,15 +36,16 @@ class _MainOptionState extends State<MainOption> {
                 leading: Icon(Icons.add),
                 trailing: Icon(Icons.arrow_circle_right_outlined),
                 onTap: (){
-                  print('Presionaste Suma');
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder:  (context) => add())
+                    MaterialPageRoute(builder: (context) => add())
                   );
-                },),
+                },
+              ),
             ),
           ),
-          SizedBox(height: 16),
+          
+          // División
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
@@ -48,15 +54,16 @@ class _MainOptionState extends State<MainOption> {
                 leading: Icon(Icons.add),
                 trailing: Icon(Icons.arrow_circle_right_outlined),
                 onTap: (){
-                  print('Presionaste Suma');
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder:  (context) => add())
+                    MaterialPageRoute(builder: (context) => division())
                   );
-                },),
+                },
+              ),
             ),
           ),
-          SizedBox(height: 16),
+          
+          // Calculadora
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
@@ -65,11 +72,16 @@ class _MainOptionState extends State<MainOption> {
                 leading: Icon(Icons.add),
                 trailing: Icon(Icons.arrow_circle_up_outlined),
                 onTap: (){
-                  
-                  print('Presionaste Calculadora');
-                },),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Calculadora())
+                  );
+                },
+              ),
             ),
           ),
+          
+          // Registro
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
@@ -78,10 +90,16 @@ class _MainOptionState extends State<MainOption> {
                 leading: Icon(Icons.add),
                 trailing: Icon(Icons.arrow_circle_up_outlined),
                 onTap: (){
-                  print('Presionaste Registro');
-                },),
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => register())
+                  );
+                },
+              ),
             ),
           ),
+          
+          // Login (aún no lo tienes, pero lo dejamos como estaba)
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
@@ -91,7 +109,8 @@ class _MainOptionState extends State<MainOption> {
                 trailing: Icon(Icons.arrow_circle_up_outlined),
                 onTap: (){
                   print('Presionaste Login');
-                },),
+                },
+              ),
             ),
           )
         ],
